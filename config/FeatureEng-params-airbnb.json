@@ -1,0 +1,4 @@
+{
+    "in_fp": "data/raw/airbnb_raw.csv",
+    "out_fp": "data/out/"
+}
