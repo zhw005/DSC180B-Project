@@ -17,10 +17,10 @@ def PDP_XGBoost(x,y, model):
 
 
 def LIME_XGBoost(x,y,model):
-    limeexplainer = lime.lime_tabular.LimeTabularExplainer(x.values, mode='classification', feature_selection = 'auto', feature_names=x.columns,class_names = [0,1], 
+    limeexplainer = lime.lime_tabular.LimeTabularExplainer(x.values, mode='classification', feature_selection = 'auto', feature_names=x.columns,class_names = [0,1],
                                                    kernel_width=None,discretize_continuous=True)
     # Now explain a prediction
-    exp = limeexplainer.explain_instance(x.iloc[0], 
+    exp = limeexplainer.explain_instance(x.iloc[0],
                                      model.predict_proba,
                                      labels = [0,1])
 
