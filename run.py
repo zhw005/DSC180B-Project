@@ -5,6 +5,7 @@ import json
 
 from src import features_airbnb
 from src import features_loan
+from src import features_diabetes
 
 
 def main(targets):
@@ -30,6 +31,12 @@ def main(targets):
         # The output is a dataset with both features and labels
         features_loan.loan_feature_engineer(**data_cfg_loan)
         print('finished feature engineering for loan dataset')
+        
+    if 'diabetes_features' in targets:
+        with open('config/FeatureEng-params-diabetes.json') as fh:
+            data_cfg_diabetes = json.load(fh)
+            features_diabetes.feature_engineer(**data_cfg_diabetes)
+            print('finished feature engineering for diabetes dataset')
 
 if __name__ == '__main__':
     # run via:
