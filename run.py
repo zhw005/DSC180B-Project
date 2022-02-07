@@ -19,7 +19,16 @@ def main(targets):
         # feature engineering for airbnb dataset
         features_airbnb.airbnb_feature_engineer(**data_cfg)
         print('finished feature engineering for airbnb dataset')
+        
+    if 'loan_features' in targets:
+        with open('config/FeatureEng-params-loan.json') as fh_loan:
+            data_cfg_loan = json.load(fh_loan)
 
+        print('start feature engineering for loan dataset')
+        # feature engineering for airbnb dataset
+        # The output is a dataset with both features and labels
+        features_loan.airbnb_feature_engineer(**data_cfg_loan)
+        print('finished feature engineering for loan dataset')
 
 if __name__ == '__main__':
     # run via:
