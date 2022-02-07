@@ -4,6 +4,7 @@ import sys
 import json
 
 from src import features_airbnb
+from src import features_loan
 
 
 def main(targets):
