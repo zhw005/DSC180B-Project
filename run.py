@@ -27,7 +27,7 @@ def main(targets):
         print('start feature engineering for loan dataset')
         # feature engineering for airbnb dataset
         # The output is a dataset with both features and labels
-        features_loan.airbnb_feature_engineer(**data_cfg_loan)
+        features_loan.loan_feature_engineer(**data_cfg_loan)
         print('finished feature engineering for loan dataset')
 
 if __name__ == '__main__':
