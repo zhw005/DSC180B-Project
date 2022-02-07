@@ -54,14 +54,14 @@ def airbnb_feature_engineer(in_fp, out_fp):
            'host_listings_count', 'host_has_profile_pic', 'host_identity_verified', 'neighbourhood', 'zipcode',
            'is_location_exact', 'property_type', 'room_type', 'accommodates',
            'bathrooms', 'bedrooms', 'beds', 'bed_type', 'amenities',
-           'price', 'security_deposit',
+           'review_scores_rating', 'security_deposit',
            'cleaning_fee', 'guests_included', 'extra_people', 'minimum_nights',
            'maximum_nights', 'has_availability',
            'availability_30', 'availability_60', 'availability_90',
            'availability_365', 'number_of_reviews', 'instant_bookable',
            'cancellation_policy', 'require_guest_profile_picture',
            'require_guest_phone_verification','reviews_per_month',
-           'review_scores_rating']
+           'price']
 
     # only keep listings that have review_scores_rating
     listings = data.loc[data['review_scores_rating'].notnull()][keep_columns]
@@ -84,27 +84,29 @@ def airbnb_feature_engineer(in_fp, out_fp):
     listings = listings.dropna().reset_index()
 
     # Features and target
-    X = listings.iloc[:, 1:-1]
-    y = listings.iloc[:, -1]
+    X = listings.iloc[:, 2:-1]
+    y = listings.iloc[:, -1].str[1:].str.replace(',','').astype(float)
+    y = y >= np.mean(y)
+    y = y.astype(int)
 
     # Numerical Features
     columns_num = ['host_response_rate', 'host_listings_count', 'accommodates', 'bathrooms',
-                  'bedrooms', 'beds', 'price', 'security_deposit', 'cleaning_fee', 'guests_included',
-                  'extra_people', 'minimum_nights', 'maximum_nights',
-                   'availability_30', 'availability_60', 'availability_90',
-                   'availability_365', 'number_of_reviews', 'reviews_per_month']
+              'bedrooms', 'beds', 'security_deposit', 'cleaning_fee', 'guests_included',
+              'extra_people', 'minimum_nights', 'maximum_nights',
+               'availability_30', 'availability_60', 'availability_90',
+               'availability_365', 'number_of_reviews', 'reviews_per_month', 'review_scores_rating']
 
     feat_num = X[columns_num]
-    for i in ['price','security_deposit','cleaning_fee','extra_people']:
+    for i in ['security_deposit','cleaning_fee','extra_people']:
         feat_num[i] = feat_num[i].str[1:].str.replace(',','')
     feat_num = feat_num.astype(float)
 
     # Categorical Features
     columns_cat = ['host_response_time', 'host_is_superhost', 'host_neighbourhood',
-                   'host_has_profile_pic', 'host_identity_verified', 'neighbourhood', 'zipcode',
-                   'is_location_exact', 'property_type', 'room_type', 'bed_type', 'has_availability',
-                   'instant_bookable', 'cancellation_policy', 'require_guest_profile_picture',
-                   'require_guest_phone_verification']
+               'host_has_profile_pic', 'host_identity_verified', 'neighbourhood', 'zipcode',
+               'is_location_exact', 'property_type', 'room_type', 'bed_type', 'has_availability',
+               'instant_bookable', 'cancellation_policy', 'require_guest_profile_picture',
+               'require_guest_phone_verification']
     feat_cat = X[columns_cat]
     for i in feat_cat.columns:
         feat_cat[i] = i + ': ' + feat_cat[i]
@@ -116,28 +118,12 @@ def airbnb_feature_engineer(in_fp, out_fp):
     cat_name = np.concatenate(enc.categories_).tolist()
     feat_cat = pd.DataFrame(cat_array, columns = cat_name)
 
-    # Text Features (Bag of Words: 500 most common words)
-    columns_text_bow = ['name', 'amenities', 'summary', 'neighborhood_overview', 'transit']
-    feat_text_bow = X[columns_text_bow]
-    feat_text_bow.amenities = feat_text_bow.amenities.str[1:-1].str.replace('"','').str.replace(',', ' ')
-
-    feat_text_name = to_df(feat_text_bow.name)
-    feat_text_amenities = to_df(feat_text_bow.amenities)
-    feat_text_summary = to_df(feat_text_bow.summary)
-    feat_text_neighborhood_overview = to_df(feat_text_bow.neighborhood_overview)
-    feat_text_transit = to_df(feat_text_bow.transit)
-
-    feat_text = pd.concat([feat_text_name,feat_text_amenities,feat_text_summary,feat_text_neighborhood_overview,feat_text_transit], axis = 1)
 
     # Final Feature Matrix
-    X_final = pd.concat([feat_num, feat_cat, feat_text], axis = 1)
+    X_final = pd.concat([feat_num, feat_cat], axis = 1)
 
-    # target
-    y_final = y > np.median(y) # 1 if y > 96 else 0
-    y_final = y_final.astype(int)
-    y_final
 
     # output the engineered features and targets
     X_final.to_csv(out_fp + 'airbnb_features.csv')
-    y_final.to_csv(out_fp + 'airbnb_target.csv')
+    y.to_csv(out_fp + 'airbnb_target.csv')
     return
