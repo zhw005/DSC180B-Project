@@ -35,4 +35,4 @@ def loan_feature_engineer(in_fp,out_fp):
     for i in fill_mode:
         feature_engineered_loan_data[i].fillna(int(feature_engineered_loan_data[i].mode()), inplace=True)
     # save the df as csv to out_fp
-    feature_engineered_loan_data.to_csv(out_fp)
+    feature_engineered_loan_data.to_csv(out_fp,index=False)
