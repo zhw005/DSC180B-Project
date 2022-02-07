@@ -1,4 +1,4 @@
 {
-	"in_fp":"../data/raw/application_data.csv.zip",
-	"out_fp":"../data/out/feature_engineered_loan_application_data.csv.zip"
+	"in_fp":"data/raw/application_data.csv.zip",
+	"out_fp":"data/out/feature_engineered_loan_application_data.csv.zip"
 }
