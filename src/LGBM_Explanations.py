@@ -33,7 +33,7 @@ def LIME(x,y,model):
 
 def SHAP(x,y,model):
     explainer = shap.Explainer(model)
-    shap_values = explainer(test_X)[:,:,1][0]
+    shap_values = explainer(x)[:,:,1][0]
     # visualize the first prediction's explanation
     shap.plots.waterfall(shap_values)
 
