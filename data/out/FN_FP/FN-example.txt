@@ -38,57 +38,10 @@ Mean value: 0.06527672787965144
 
 Refute: Add a Random Common Cause
 Estimated effect:0.06527672787965144
-New effect:0.06526998304134299
+New effect:0.06256086631422561
 
 Refute: Use a subset of data
 Estimated effect:0.06527672787965144
-New effect:0.0639489114538078
-p value:0.44999999999999996
-
-Estimand type: nonparametric-ate
-
-### Estimand : 1
-Estimand name: backdoor
-Estimand expression:
-       d                             
-───────────────(Expectation(FN|beds))
-d[accommodates]                      
-Estimand assumption 1, Unconfoundedness: If U→{accommodates} and U→FN then P(FN|accommodates,beds,U) = P(FN|accommodates,beds)
-
-### Estimand : 2
-Estimand name: iv
-No such variable found!
-
-### Estimand : 3
-Estimand name: frontdoor
-No such variable found!
-
-*** Causal Estimate ***
-
-## Identified estimand
-Estimand type: nonparametric-ate
-
-### Estimand : 1
-Estimand name: backdoor
-Estimand expression:
-       d                             
-───────────────(Expectation(FN|beds))
-d[accommodates]                      
-Estimand assumption 1, Unconfoundedness: If U→{accommodates} and U→FN then P(FN|accommodates,beds,U) = P(FN|accommodates,beds)
-
-## Realized estimand
-b: FN~accommodates+beds
-Target units: ate
-
-## Estimate
-Mean value: 0.06527672787965144
-
-Refute: Add a Random Common Cause
-Estimated effect:0.06527672787965144
-New effect:0.06596969485041532
-
-Refute: Use a subset of data
-Estimated effect:0.06527672787965144
-New effect:0.06718354727657318
-p value:0.41
+New effect:0.06448876739448739
+p value:0.43000000000000005
 

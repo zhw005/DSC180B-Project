@@ -71,7 +71,7 @@ def do_why(data, treatment, outcome, common_causes, out_fp):
             outcome= outcome,
             common_causes = common_causes)
 
-    f = open(out_fp, "a", encoding="utf-8")
+    f = open(out_fp, "w", encoding="utf-8")
     # 2. Identify
     identified_estimand = model.identify_effect(proceed_when_unidentifiable=True)
     print(identified_estimand, file=f)
