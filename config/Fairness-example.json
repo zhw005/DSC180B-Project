@@ -1,0 +1,9 @@
+{
+    "model": "xgboost",
+    "model_path": "data/model/loan_xgboost",
+    "methods": ["group_fairness", "predictive_parity", "conditional_frequencies", "causal_discrimination"],
+    "data_feature_path": "data/loan/loan_features.csv",
+    "data_target_path": "data/loan/loan_target.csv",
+    "sensitive_variable": "CODE_GENDER: M",
+    "out_fp": "data/out/fairness"
+}

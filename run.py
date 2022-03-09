@@ -3,10 +3,10 @@
 import sys
 import json
 
-from src import features_airbnb
-from src import features_loan
-from src import features_diabetes
-
+from src.feature_engineering import features_airbnb
+from src.feature_engineering import features_loan
+from src.feature_engineering import features_diabetes
+from src import fairness
 
 def main(targets):
     '''
@@ -37,6 +37,12 @@ def main(targets):
             data_cfg_diabetes = json.load(fh)
             features_diabetes.feature_engineer(**data_cfg_diabetes)
             print('finished feature engineering for diabetes dataset')
+
+    if 'fairness' in targets:
+         with open('config/Fairness-example.json') as fh:
+            fairness_cfg = json.load(fh)
+            fairness.run(fairness_cfg)
+            print(f'Fairness Analysis result generated at data/out/fairness/{fairness_cfg["out_fp"]}')
 
 if __name__ == '__main__':
     # run via:

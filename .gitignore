@@ -7,3 +7,10 @@ notebooks/.ipynb_checkpoints/Loan Dataset Error Explanation-checkpoint.ipynb
 data/loan/feature_engineered_loan_data.csv
 notebooks/.ipynb_checkpoints/model-checkpoint.ipynb
 src/__pycache__/sk_tabnet.cpython-38.pyc
+src/__pycache__/fairness.cpython-38.pyc
+src/__pycache__/sk_tabnet.cpython-38.pyc
+src/feature_engineering/__pycache__/features_airbnb.cpython-38.pyc
+src/feature_engineering/__pycache__/features_airbnb.cpython-39.pyc
+src/feature_engineering/__pycache__/features_diabetes.cpython-38.pyc
+src/feature_engineering/__pycache__/features_loan.cpython-38.pyc
+src/__pycache__/sk_tabnet.cpython-38.pyc

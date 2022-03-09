@@ -1,0 +1,3 @@
+After flipping the sensitve attribute CODE_GENDER: M, 14.790000000000001% of the prediction changes
+The average prediction of class CODE_GENDER: M = 0.0 changed 0.14759232676497452
+The average prediction of class CODE_GENDER: M = 1.0 changed -0.12357894736842107
