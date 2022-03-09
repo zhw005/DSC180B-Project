@@ -1,0 +1,10 @@
+{
+    "model": "svm",
+    "model_path": "data/model/airbnb_svm",
+    "treatment": "accommodates",
+    "outcome": "FN",
+    "common_causes": "beds",
+    "data_feature_path": "data/airbnb/airbnb_features.csv",
+    "data_target_path": "data/airbnb/airbnb_target.csv",
+    "out_fp": "data/out/FN_FP"
+}

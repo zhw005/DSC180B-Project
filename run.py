@@ -7,6 +7,7 @@ from src.feature_engineering import features_airbnb
 from src.feature_engineering import features_loan
 from src.feature_engineering import features_diabetes
 from src import fairness
+from src import FN_FP
 
 def main(targets):
     '''
@@ -21,7 +22,7 @@ def main(targets):
         # feature engineering for airbnb dataset
         features_airbnb.airbnb_feature_engineer(**data_cfg)
         print('finished feature engineering for airbnb dataset')
-        
+
     if 'loan_features' in targets:
         with open('config/FeatureEng-params-loan.json') as fh_loan:
             data_cfg_loan = json.load(fh_loan)
@@ -31,7 +32,7 @@ def main(targets):
         # The output is a dataset with both features and labels
         features_loan.loan_feature_engineer(**data_cfg_loan)
         print('finished feature engineering for loan dataset')
-        
+
     if 'diabetes_features' in targets:
         with open('config/FeatureEng-params-diabetes.json') as fh:
             data_cfg_diabetes = json.load(fh)
@@ -43,6 +44,13 @@ def main(targets):
             fairness_cfg = json.load(fh)
             fairness.run(fairness_cfg)
             print(f'Fairness Analysis result generated at data/out/fairness/{fairness_cfg["out_fp"]}')
+
+    if "FN_FP" in targets:
+         with open('config/FN_FP-example.json') as fh:
+            FN_FP_cfg = json.load(fh)
+            FN_FP.run(FN_FP_cfg)
+            print(f'FN_FP Analysis result generated at data/out/FN_FP/{FN_FP_cfg["out_fp"]}')
+
 
 if __name__ == '__main__':
     # run via:
