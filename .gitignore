@@ -1,1 +1,7 @@
 .DS_Store
+notebooks/.ipynb_checkpoints/Fairness LSTM on Airbnb-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/Fairness_TabNet-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/Global and Local Explanations of LightGBM Updated-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/Global and Local Explanations of TabNet-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/Loan Dataset Error Explanation-checkpoint.ipynb
+data/loan/feature_engineered_loan_data.csv
