@@ -5,3 +5,5 @@ notebooks/.ipynb_checkpoints/Global and Local Explanations of LightGBM Updated-c
 notebooks/.ipynb_checkpoints/Global and Local Explanations of TabNet-checkpoint.ipynb
 notebooks/.ipynb_checkpoints/Loan Dataset Error Explanation-checkpoint.ipynb
 data/loan/feature_engineered_loan_data.csv
+notebooks/.ipynb_checkpoints/model-checkpoint.ipynb
+src/__pycache__/sk_tabnet.cpython-38.pyc
