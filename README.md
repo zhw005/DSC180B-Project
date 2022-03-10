@@ -25,3 +25,4 @@ In our project, we will be focusing on using different techniques from causal in
 | diabetes_features | 'config/FeatureEng-params-diabetes.json' | Do feature engineering for diabetes dataset |
 | fairness | 'config/Fairness-example.json' | Do fairness evaluation |
 | FN_FP | 'config/FN_FP-example.json' | Do False Negative and False Positive explanation |
+| model_explanations | 'config/Model_Explanations_Example_loan.json', 'config/Model_Explanations_Example_airbnb.json', 'config/Model_Explanations_Example_healthcare.json'| Do model explanations|
