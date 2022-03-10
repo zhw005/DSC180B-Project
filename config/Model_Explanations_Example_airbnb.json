@@ -1,0 +1,8 @@
+{
+    "model": "xgboost",
+    "data": "airbnb",
+    "model_path": "data/model/airbnb_xgboost",
+    "data_feature_path": "data/airbnb/airbnb_features.csv",
+    "data_target_path": "data/airbnb/airbnb_target.csv",
+    "out_fp": "data/out/model_explanations"
+}

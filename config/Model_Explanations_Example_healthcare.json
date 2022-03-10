@@ -1,0 +1,8 @@
+{
+    "model": "xgboost",
+    "data": "healthcare",
+    "model_path": "data/model/health_xgboost",
+    "data_feature_path": "data/health/diabetes features.csv",
+    "data_target_path": "data/health/diabetes target.csv",
+    "out_fp": "data/out/model_explanations"
+}
