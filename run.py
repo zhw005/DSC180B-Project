@@ -35,7 +35,7 @@ def main(targets):
         print('finished feature engineering for loan dataset')
 
     if 'diabetes_features' in targets:
-        with open('config/FeatureEng-params-diabetes.json') as fh:
+        with open('config/FeatureEng-params-healthcare.json') as fh:
             data_cfg_diabetes = json.load(fh)
             features_diabetes.feature_engineer(**data_cfg_diabetes)
             print('finished feature engineering for diabetes dataset')
