@@ -26,4 +26,4 @@ In our project, we will be focusing on using different techniques from causal in
 | fairness | 'config/Fairness-example.json' | Do fairness evaluation |
 | FN_FP | 'config/FN_FP-example.json' | Do False Negative and False Positive explanation |
 | model_explanations | 'config/Model_Explanations_Example_loan.json'| Do model explanations - loan data example|
-| model_explanations | 'config/Model_Explanations_Example_healthcare.json'| Do model explanations - healthcare data example|
+| recourse | 'config/Recourse-example.json'| Generate recourse explanation - loan data example|
