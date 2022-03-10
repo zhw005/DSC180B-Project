@@ -8,6 +8,7 @@ from src.feature_engineering import features_loan
 from src.feature_engineering import features_diabetes
 from src import fairness
 from src import FN_FP
+from src import XGBoost_Explanations
 
 def main(targets):
     '''
