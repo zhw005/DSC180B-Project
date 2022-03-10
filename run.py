@@ -59,18 +59,6 @@ def main(targets):
             XGBoost_Explanations.run_model_explanations(loan_ME_cfg)
             print(f'Loan model explanation Examples generated at data/out/model_explanations/{loan_ME_cfg["out_fp"]}')
 
-        # airbnb
-        with open('config/Model_Explanations_Example_airbnb.json') as fh:
-            airbnb_ME_cfg = json.load(fh)
-            XGBoost_Explanations.run_model_explanations(airbnb_ME_cfg)
-            print(f'Airbnb model explanation Examples generated at data/out/model_explanations/{airbnb_ME_cfg["out_fp"]}')
-
-        # healthcare
-        with open('config/Model_Explanations_Example_healthcare.json') as fh:
-            health_ME_cfg = json.load(fh)
-            XGBoost_Explanations.run_model_explanations(health_ME_cfg)
-            print(f'Healthcare model explanation Examples generated at data/out/model_explanations/{health_ME_cfg["out_fp"]}')
-
 if __name__ == '__main__':
     # run via:
     # python main.py data model
