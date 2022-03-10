@@ -9,6 +9,7 @@ from src.feature_engineering import features_diabetes
 from src import fairness
 from src import FN_FP
 from src import XGBoost_Explanations
+from src import recourse
 
 def main(targets):
     '''
@@ -58,6 +59,12 @@ def main(targets):
             loan_ME_cfg = json.load(fh)
             XGBoost_Explanations.run_model_explanations(loan_ME_cfg)
             print(f'Loan model explanation Examples generated at data/out/model_explanations/{loan_ME_cfg["out_fp"]}')
+            
+    if 'recourse' in targets:
+        with open('config/Recourse-example.json') as fh:
+            recourse_cfg = json.load(fh)
+            recourse.run(recourse_cfg)
+            print(f'Recourse explanation generated at data/out/recourse/{recourse_cfg["out_fp"]}')
 
 if __name__ == '__main__':
     # run via:
