@@ -1,0 +1,7 @@
+{
+    "model": "xgboost",
+    "model_path": "data/model/loan_xgboost",
+    "data_feature_path": "data/loan/loan_features.csv",
+    "data_target_path": "data/loan/loan_target.csv",
+    "out_fp": "data/out/recourse"
+}
