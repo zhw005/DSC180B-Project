@@ -20,6 +20,8 @@ In our project, we will be focusing on using different techniques from causal in
 
  target | config | experiment |
 | :---: | :---: | :---: |
-| airbnb_features | None | Do feature engineering for airbnb dataset |
-| loan_features | None | Do feature engineering for loan dataset |
-| diabetes_features | None | Do feature engineering for diabetes dataset |
+| airbnb_features | 'config/FeatureEng-params-airbnb.json' | Do feature engineering for airbnb dataset |
+| loan_features | 'config/FeatureEng-params-loan.json' | Do feature engineering for loan dataset |
+| diabetes_features | 'config/FeatureEng-params-diabetes.json' | Do feature engineering for diabetes dataset |
+| fairness | 'config/Fairness-example.json' | Do fairness evaluation |
+| FN_FP | 'config/FN_FP-example.json' | Do False Negative and False Positive Explanation |
