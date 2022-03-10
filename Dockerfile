@@ -29,7 +29,7 @@ USER jovyan
 # RUN conda install -y scikit-learn
 
 RUN pip install --no-cache-dir torch==1.10.0
-RUN pip install --no-cache-dir torchtext==0.11.0 
+RUN pip install --no-cache-dir torchtext==0.11.0
 RUN pip install --no-cache-dir shap==0.40.0
 RUN pip install --no-cache-dir numpy==1.19.5
 RUN pip install --no-cache-dir lime==0.2.0.1
@@ -41,6 +41,7 @@ RUN pip install --no-cache-dir scikit-learn==1.0.1
 RUN pip install --no-cache-dir lightgbm
 RUN pip install --no-cache-dir xgboost
 RUN pip install --no-cache-dir pytorch_tabnet
+RUN pip install --no-cache-dir mip
 
 # Override command to disable running jupyter notebook at launch
 #CMD ["/bin/bash"]
